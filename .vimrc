@@ -153,3 +153,20 @@ inoremap <ESC> <ESC>l
 "This command: set autochdir Must be after cs add cscope.out!!!!!!!!!!
 "set autochdir							"auto change the dir to the editing file's path
 "****************************************************************************************
+
+let mapleader = "\<Space>"
+function! Zoom ()
+    " check if is the zoomed state (tabnumber > 1 && window == 1)
+    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+        let l:cur_winview = winsaveview()
+        let l:cur_bufname = bufname('')
+        tabclose
+        " restore the view
+        if l:cur_bufname == bufname('')
+            call winrestview(cur_winview)
+        endif
+    else
+        tab split
+    endif
+endfunction
+nmap <leader>z :call Zoom()<CR>
