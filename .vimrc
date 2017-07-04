@@ -154,7 +154,7 @@ inoremap <ESC> <ESC>l
 "set autochdir							"auto change the dir to the editing file's path
 "****************************************************************************************
 
-let mapleader = "\<Space>"
+"let mapleader = "\<Space>"
 function! Zoom ()
     " check if is the zoomed state (tabnumber > 1 && window == 1)
     if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
