@@ -132,7 +132,7 @@ nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>
 "*****end of Cscope setting ************
 
-inoremap ( (   )<ESC>hhi
+inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {<cr>}<ESC>ko<tab>
 inoremap <C-o> <ESC>o
